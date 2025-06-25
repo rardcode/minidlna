@@ -1,0 +1,20 @@
+
+# "A"  for audio  (eg. media_1=A,/home/jmaggard/Music)
+# "V"  for video  (eg. media_2=V,/home/jmaggard/Videos)
+# "P"  for images (eg. media_3=P,/home/jmaggard/Pictures)
+# "PV" for pictures and video (eg. media[1]=PV,/home/jmaggard/digital_camera)
+# NOTE: for more media folder, increment a number after _, as in the lines commented below
+
+services:
+  minidlna:
+    image: rardcode/minidlna
+    container_name: minidlna
+    environment:
+    - media_1=P,/media/multimedia/photos
+    volumes:
+    - /srv/multimedia:/media/multimedia
+    - /etc/timezone:/etc/timezone:ro
+    - /etc/localtime:/etc/localtime:ro
+    # You need to run the container in host mode for it to be able to receive UPnP broadcast packets. The default bridge mode will not work.
+    network_mode: host
+    restart: unless-stopped
