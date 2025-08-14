@@ -70,6 +70,10 @@ Type of media legend:
 ```
 
 ## Changelog
+v1.0.1 - 14.08.2025
+- Alpine v. 3.22.1
+- minidlna v. 1.3.3-r1
+
 v1.0.0 - 25.06.2025
 - Alpine v. 3.22.0
 - minidlna v. 1.3.3-r1
